@@ -1,0 +1,73 @@
+git init creates a .git file which has -
+
+.git
+├── HEAD
+├── config
+├── description
+├── hooks
+│   ├── applypatch-msg.sample
+│   ├── commit-msg.sample
+│   ├── fsmonitor-watchman.sample
+│   ├── post-update.sample
+│   ├── pre-applypatch.sample
+│   ├── pre-commit.sample
+│   ├── pre-merge-commit.sample
+│   ├── pre-push.sample
+│   ├── pre-rebase.sample
+│   ├── pre-receive.sample
+│   ├── prepare-commit-msg.sample
+│   ├── push-to-checkout.sample
+│   └── update.sample
+├── info
+│   └── exclude
+├── objects
+│   ├── info
+│   └── pack
+└── refs
+    ├── heads
+    └── tags
+
+
+All files tracked are stored in objects in hash format.
+
+git statuses of a file (zoomed out) -> 
+	1. Working directory
+	2. Staging area (git started tracking the file in this area)
+	3. .git directory (repository)
+
+	zoomed in -> 
+	
+	1. untracked
+	2. unmodified
+	3. modified (after adding a file in staging area if a file content is changed)
+	4. staged.
+
+After staging if we add something but don't stage and commit an old staged version then that old version will be commited.
+
+git restore file_name -> restore the file to the last commited state.
+
+git helper commands -> 
+	1. git log --> shows commit history -> commit hash first two letters are folder and the rest is a string 
+	2. git log --oneline --decorate.
+	3. git help command -> man page. Example = git help status
+	4. difference between different commits -> git diff commitID1..commitID2.
+	5. git add . -> adds all files and folders under current directory into staging area.
+	6. git add -a -> adds all files and folders both under current directory and the parent directory
+	7. remove staged files -> git restore --staged filename
+	8. git checkout -- file_name -> changes made in file_nmae will be discarded.
+	9. git checkout -- . -> changes made in all files will be discarded.
+Commit structure -> 	
+
+HEAD points to the current commit. moving back or forward to a commit makes head point to the different commit. Head points to latest commit of current branch.
+
+git branch -> list all the branches.
+git checkout branch_name.
+git branch -D branch_name
+
+git merge branch_name -> branch_name branch is merged with current branch 
+
+git revert commit-hash -> revert to commit which had commit hash. git adds one new commit with reverted changes.q
+
+git reset commit-hash -> --hard -> file changes and commits are gone, --soft -> file changes remain but commits are gone, --mixed -> 
+
+stash
