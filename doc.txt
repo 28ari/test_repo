@@ -69,3 +69,5 @@ git merge branch_name -> branch_name branch is merged with current branch
 git revert commit-hash -> revert to commit which had commit hash. git adds one new commit with reverted changes.q
 
 git reset commit-hash -> --hard -> file changes and commits are gone, --soft -> file changes remain but commits are gone, --mixed -> 
+
+stash
